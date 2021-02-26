@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" /> -->
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="wrapper row">
+
+        <section id="vertical-menu-bar" class="vertical-menu-bar col-md-2">
+            <div class="logo-div flex-row">
+                <img src="assets/images/kmf-logo.jpg" alt="logo">
+            </div>
+            <div class="menu-items-div">
+
+                <ul class="list-items-group">
+                    <li><a href="homepage.html"><span><img class="menu-icon"src="assets/icons/home.svg" alt="icon"></span><span class="menu-item">Homepage</span></a></li>
+                    <li><a href="dashboard.html"><span><img class="menu-icon"src="assets/icons/home.svg" alt="icon"></span><span class="menu-item">Dashboard</span></a></li>
+                    <li><a href="#"><span><img class="menu-icon"src="assets/icons/settings.svg" alt="icon"></span><span class="menu-item">Configuration</span></a></li>
+                    <li><a href="data-export.html"><span><img class="menu-icon"src="assets/icons/download.svg" alt="icon"></span><span class="menu-item">Data Export</span></a></li>
+                    <li><a href="alarms.html"><span><img class="menu-icon"src="assets/icons/alarm.svg" alt="icon"></span><span class="menu-item">Alarms</span></a></li>
+                    <li><a href="trendlines.html"><span><img class="menu-icon"src="assets/icons/trendlines.png" alt="icon"></span><span class="menu-item">Trendlines</span></a></li>
+                </ul>
+
+            </div>
+
+            <div class="reset-shutdown-div flex-row">
+                <button class="reset-shutdown-button flex-row" onClick="document.location.reload(true)"><span><img class="menu-icon"src="assets/icons/reset.png" alt="icon"></span><span class="menu-item" >Reload</span></button>
+                <button class="reset-shutdown-button flex-row" id="shutdown-button"><span><img class="menu-icon"src="assets/icons/shutdown.png" alt="icon"></span><span class="menu-item">Shutdown</span></button>
+              </div>
+              
+        </section>
+
+        <section class="operations-page-content col-md-10 flex-col">
+            <h2>List Of Operations</h2>
+
+            <!-- <button id="add-new-operation">
+                Create New Operation
+            </button> -->
+
+            <button type="button" class="btn btn-primary" id="add-new-operation" data-toggle="modal" data-target="#newTodoModal">
+                Create New Operation
+            </button>
+            
+            <div id="operations-list-div" class="flex-row">
+                
+            </div>
+
+            <section id="todoList">
+                <!-- Todo List Section -->
+            </section>
+
+            <!-- Create Todo Modal -->
+            <div class="modal fade" id="newTodoModal" tabindex="-1" role="dialog" aria-labelledby="newTodoModalTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                            <h3>New Item</h3>
+                            <textarea name="textarea" id="todoInput" cols="50" rows="3"></textarea>
+                        
+                        <p class="createTodoError"></p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="saveTodo">Save changes</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="closeTodoModal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+    
+    <script src="js/jquery.3.2.1.js"></script>
+    <script src="js/popper.1.12.9.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+
+    <div class="wrapper row">
+
+        <section class="vertical-menu-bar col-md-2">
+            <div class="logo-div flex-row">
+                <img src="assets/images/kmf-logo.jpg" alt="logo">
+            </div>
+            <div class="menu-items-div">
+
+                <ul class="list-items-group">
+                    <li><a href="homepage.html"><span><img class="menu-icon"src="assets/icons/home.svg" alt="icon"></span><span class="menu-item">Homepage</span></a></li>
+                    <li><a href="#"><span><img class="menu-icon"src="assets/icons/dashboard.svg" alt="icon"></span><span class="menu-item">Dashboard</span></a></li>
+                    <li><a href="configuration.html"><span><img class="menu-icon"src="assets/icons/settings.svg" alt="icon"></span><span class="menu-item">Configuration</span></a></li>
+                    <li><a href="data-export.html"><span><img class="menu-icon"src="assets/icons/download.svg" alt="icon"></span><span class="menu-item">Data Export</span></a></li>
+                    <li><a href="alarms.html"><span><img class="menu-icon"src="assets/icons/alarm.svg" alt="icon"></span><span class="menu-item">Alarms</span></a></li>
+                    <li><a href="trendlines.html"><span><img class="menu-icon"src="assets/icons/trendlines.png" alt="icon"></span><span class="menu-item">Trendlines</span></a></li>
+                </ul>
+              
+            </div>
+
+            <div class="reset-shutdown-div flex-row">
+              <button class="reset-shutdown-button flex-row" onClick="document.location.reload(true)"><span><img class="menu-icon"src="assets/icons/reset.png" alt="icon"></span><span class="menu-item" >Reload</span></button>
+              <button class="reset-shutdown-button flex-row" id="shutdown-button"><span><img class="menu-icon"src="assets/icons/shutdown.png" alt="icon"></span><span class="menu-item">Shutdown</span></button>
+            </div>
+
+        </section>
+
+        <section class="page-content col-md-10">
+
+            <div class="action-bar-div flex-row">
+
+                <div class="operationType dropdown select-wrapper" id="operationType">
+                    <div class="btn-wrapper flex-row">
+                        <span>Select Operation:</span>
+                        <span class="value-span" id="operationTypeValue"></span>
+                        <span><i class="fas fa-caret-down"><img src="assets/icons/arrow-down-short.svg" alt=""></i></span>
+                        
+                    </div>
+                    
+                        <ul id="operationTypeList" class="menu closed flex-row">
+
+                            <div class="modal-wrapper">
+
+                            <div class="select-menu-header flex-row">
+                                <span class="select-menu-title">Select Operation</span>
+                                <span class="select-menu-close-btn">
+                                    <i class="iconify" data-icon="octicon:x-16"><img src="assets/icons/close.svg" alt=""></i>
+                                </span>
+                            </div>
+                            
+                            <li><i class="iconify" data-icon="octicon:check-16"><img src="assets/icons/check.svg"></i>Operation 1</li>
+                            <li><i class="iconify" data-icon="octicon:check-16"><img src="assets/icons/check.svg"></i>Operation 2</li>
+                            <li><i class="iconify" data-icon="octicon:check-16"><img src="assets/icons/check.svg"></i>Operation 3</li>
+                           
+                        </div>
+
+                        </ul>
+                    
+                    
+                </div>
+
+                <button class="action-bar-button start-button flex-row">
+                    <span><img class="action-bar-icon" src="assets/icons/play.svg" alt="start-icon"></span>
+                    <span class="action-bar-start">Start</span>
+                </button>
+
+                <button class="action-bar-button stop-button flex-row">
+                    <span><img class="action-bar-icon" src="assets/icons/stop.svg" alt="start-icon"></span>
+                    <span class="action-bar-stop">Stop</span>
+                </button>
+
+                <button class="action-bar-button internet-button flex-row">
+                  <span><img class="action-bar-icon" src="assets/icons/internet.svg" alt="start-icon"></span>
+                  <span class="action-bar-internet">Connect to Internet</span>
+              </button>
+              
+                <div class="sync-div flex-row">
+                    <span><img class="action-bar-icon" src="assets/icons/sync.svg" alt="start-icon"></span>
+                    <span class="sync-value">00:00</span>
+                </div>
+
+                <div class="action-bar-alarm-count flex-row">
+                    <span><img class="action-bar-icon" src="assets/icons/alarmactionbar.svg" alt="start-icon"></span>
+                    <span class="alarm-count">00</span>
+                </div>
+
+                <!-- <button class="action-bar-button internet-button flex-row">
+                  <span><img class="action-bar-icon" src="assets/icons/internet.svg" alt="start-icon"></span>
+                  <span class="action-bar-internet">Connect to Internet</span>
+              </button> -->
+
+            </div>
+
+            <div class="motor-speeds-div">
+                <h2 class="motor-speeds-title text-center">Motor Speeds</h2>
+                <div class="motor-speeds-cardgroup">
+                  
+                    <div class="row row-cols-1 row-cols-md-5 g-2">
+                        
+                        <div class="col">
+                          <div class="card h-100 text-center">
+                            <div class="card-chart" id="blowerSpeedChart">
+                              
+                            </div>
+                            <div class="card-footer">
+                              <p class="card-footer-caption">Blower Speed (rpm)</p>
+                            </div>
+                          </div>
+                        </div>    
+                        <div class="col">
+                            <div class="card h-100 text-center">
+                              <div class="card-chart" id="feederSpeedChart">
+
+                              </div>
+                              <div class="card-footer">
+                                <p class="card-footer-caption">Feeder Speed (rpm)</p>
+                              </div>
+                            </div>
+                          </div> 
+                          <div class="col">
+                            <div class="card h-100 text-center">
+                              <div class="card-chart" id="mixerSpeedChart">
+
+                              </div>
+                              <div class="card-footer">
+                                <p class="card-footer-caption">Mixer Speed (rpm)</p>
+                              </div>
+                            </div>
+                          </div> 
+                          <div class="col">
+                            <div class="card h-100 text-center">
+                              <div class="card-chart" id="airVolumeChart">
+
+                              </div>
+                              <div class="card-footer">
+                                <p class="card-footer-caption">Air Velocity (m/s)</p>
+                              </div>
+                            </div>
+                          </div> 
+                          <div class="col">
+                            <div class="card h-100 text-center">
+                              <div class="card-chart" id="airPressureChart">
+
+                              </div>
+                              <div class="card-footer">
+                                <p class="card-footer-caption">Air Pressure (bar)</p>
+                              </div>
+                            </div>
+                          </div>             
+                    
+                       
+                      </div>
+                </div>
+
+            </div>
+
+            <div class="temperatures-humidity-div">
+                <h2 class="temperatures-humidity-title text-center">Temperatures and Humidity</h2>
+                <div class="temperatures-humidity-cardgroup">
+                    <div class="row row-cols-1 row-cols-md-5 g-2">
+                        
+                        <div class="col">
+                          <div class="card h-100 text-center">
+                            <div class="card-header">
+                                <h5 class="card-title">Drying Duct Exhaust</h5>
+                            </div>
+                            <div class="flex-row first-card-param">
+                              <div class="card-icon-div">
+                                <img src="assets/icons/temperature.png" alt="icon">
+                              </div>
+                              <div class="first-card-param-content">
+                                <p class="card-subgroup-heading">Temperature (C)</p>
+                                <p class="card-subgroup-value" id="dDuctTemp">1234.00</p>
+                              </div>
+                            </div>
+                            <div class="second-card-param flex-row">
+                              <div class="card-icon-div">
+                                <img src="assets/icons/humidity.svg" alt="icon">
+                              </div>
+                              <div class="second-card-param-content">
+                                <p class="card-subgroup-heading">Humidity (%)</p>
+                                <p class="card-subgroup-value" id="dDuctHumi">128.00</p>
+                              </div>  
+                            </div>                           
+                          </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 text-center">
+                              <div class="card-header">
+                                  <h5 class="card-title">Material Input</h5>
+                              </div>
+                              <div class="flex-row first-card-param">
+                                <div class="card-icon-div">
+                                  <img src="assets/icons/temperature.png" alt="icon">
+                                </div>
+                                <div class="first-card-param-content">
+                                  <p class="card-subgroup-heading">Temperature (C)</p>
+                                <p class="card-subgroup-value" id="materialTemp">1274.00</p>
+                                </div>
+                              </div>
+                              <div class="second-card-param flex-row">
+                                <div class="card-icon-div">
+                                  <img src="assets/icons/humidity.svg" alt="icon">
+                                </div>
+                                <div class="second-card-param-content">
+                                  <p class="card-subgroup-heading">Humidity (%)</p>
+                                  <p class="card-subgroup-value" id="materialHumi">134.00</p>
+                                </div>  
+                              </div>                              
+                            </div>
+                          </div>
+
+                          <div class="col">
+                            <div class="card h-100 text-center">
+                              <div class="card-header">
+                                  <h5 class="card-title">Heat Source</h5>
+                              </div>
+                              <div class="flex-row first-card-param">
+                                <div class="card-icon-div">
+                                  <img src="assets/icons/temperature.png" alt="icon">
+                                </div>
+                                <div class="first-card-param-content">
+                                  <p class="card-subgroup-heading">Heat Exchanger (C)</p>
+                                <p class="card-subgroup-value" id="hexchangerTemp">1234.00</p>
+                                </div>
+                              </div>
+                              <div class="second-card-param flex-row">
+                                <div class="card-icon-div">
+                                  <img src="assets/icons/temperature.png" alt="icon">
+                                </div>
+                                <div class="second-card-param-content">
+                                  <p class="card-subgroup-heading">Burner Temp (C)</p>
+                                  <p class="card-subgroup-value" id="burnerTemp">234.00</p>
+                                </div>  
+                              </div>                     
+                            </div>
+                          </div>
+
+                          <div class="col">
+                            <div class="card h-100 text-center">
+                              <div class="card-header">
+                                  <h5 class="card-title">Panel</h5>
+                              </div>
+                              <div class="flex-row first-card-param">
+                                <div class="card-icon-div">
+                                  <img src="assets/icons/temperature.png" alt="icon">
+                                </div>
+                                <div class="first-card-param-content">
+                                  <p class="card-subgroup-heading">Temperature (C)</p>
+                                  <p class="card-subgroup-value" id="panelTemp">1234.00</p>
+                                </div>
+                              </div>
+                              <div class="second-card-param flex-row">
+                                <div class="card-icon-div">
+                                  <img src="assets/icons/door-open.svg" alt="icon">
+                                </div>
+                                <div class="second-card-param-content">
+                                  <p class="card-subgroup-heading">Door</p>
+                                  <p class="card-subgroup-value" id="panelDoor">Closed</p>
+                                </div>  
+                              </div>                         
+                            </div>
+                          </div>
+
+                          <div class="col">
+                            <div class="card h-100 text-center">
+                              <div class="card-header">
+                                  <h5 class="card-title">Other Info</h5>
+                              </div>
+                              <div class="flex-row first-card-param">
+                                <div class="card-icon-div">
+                                  <img src="assets/icons/material.svg" alt="icon">
+                                </div>
+                                <div class="first-card-param-content">
+                                  <p class="card-subgroup-heading">Material</p>
+                                  <p class="card-subgroup-value" id="materialPresence">True</p>
+                                </div>
+                              </div>
+                              <div class="second-card-param flex-row">
+                                <div class="card-icon-div">
+                                  <img src="assets/icons/burner.svg" alt="icon">
+                                </div>
+                                <div class="second-card-param-content">
+                                  <p class="card-subgroup-heading">Burner</p>
+                                  <p class="card-subgroup-value" id="burnerStatus">Burning</p>
+                                </div>  
+                              </div>                   
+                            </div>
+                          </div>
+                
+                      </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="js/jquery.3.2.1.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/animated.js"></script>   
+    <script src="js/amcharts-settings.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

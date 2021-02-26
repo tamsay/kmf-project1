@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Download</title>
+    <link rel="stylesheet" href="css/tabulator.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="wrapper row">
+
+        <section class="vertical-menu-bar col-md-2">
+            <div class="logo-div flex-row">
+                <img src="assets/images/kmf-logo.jpg" alt="logo">
+            </div>
+            <div class="menu-items-div">
+
+                <ul class="list-items-group">
+                    <li><a href="homepage.html"><span><img class="menu-icon"src="assets/icons/home.svg" alt="icon"></span><span class="menu-item">Homepage</span></a></li>
+                    <li><a href="dashboard.html"><span><img class="menu-icon"src="assets/icons/home.svg" alt="icon"></span><span class="menu-item">Dashboard</span></a></li>
+                    <li><a href="configuration.html"><span><img class="menu-icon"src="assets/icons/settings.svg" alt="icon"></span><span class="menu-item">Configuration</span></a></li>
+                    <li><a href="#"><span><img class="menu-icon"src="assets/icons/download.svg" alt="icon"></span><span class="menu-item">Data Export</span></a></li>
+                    <li><a href="alarms.html"><span><img class="menu-icon"src="assets/icons/alarm.svg" alt="icon"></span><span class="menu-item">Alarms</span></a></li>
+                    <li><a href="trendlines.html"><span><img class="menu-icon"src="assets/icons/trendlines.png" alt="icon"></span><span class="menu-item">Trendlines</span></a></li>
+                </ul>
+            </div>
+
+            <div class="reset-shutdown-div flex-row">
+                <button class="reset-shutdown-button flex-row" onClick="document.location.reload(true)"><span><img class="menu-icon"src="assets/icons/reset.png" alt="icon"></span><span class="menu-item" >Reload</span></button>
+                <button class="reset-shutdown-button flex-row" id="shutdown-button"><span><img class="menu-icon"src="assets/icons/shutdown.png" alt="icon"></span><span class="menu-item">Shutdown</span></button>
+              </div>
+
+        </section>
+
+        <section class="data-download-page-content col-md-10">
+            <h2 class="text-center">Download Data</h2>
+
+            <div class="data-query-div flex-row">
+
+                <div class="date-query-div flex-row">
+                    <div class="start-date-div date-div flex-col">
+                        <span>Start Date</span>
+                        <input type="date" name="startDatePicker" id="startDatePicker" class="date-picker">
+                    </div>
+                    <div class="end-date-div date-div flex-col">
+                        <span>End Date</span>
+                        <input type="date" name="endDatePicker" id="endDatePicker" class="date-picker">
+                    </div>
+                    <button id="getData" class="flex-row">
+                        <span>
+                            <img src="assets/icons/search.svg" alt="icon">
+                        </span>
+                        <span>Get Data</span>
+                    </button>
+                </div>
+
+                <div class="download-data-div">
+                    <button id="downloadDataButton" class="flex-row">
+                        <span>
+                            <img src="assets/icons/download2.svg" alt="icon">
+                        </span>
+                        <span>
+                            Download Data
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+           <div id="displaySearchData">
+                
+           </div>
+        </section>
+
+    </div>
+    <script src="js/jquery.3.2.1.js"></script>
+    <script src="js/tabulator.min.js"></script>
+    <script src="js/xlsx.min.js"></script>
+    <script src="js/data-export.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
