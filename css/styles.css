@@ -16,7 +16,7 @@
     width: 100%;
     padding: 0.5rem;
     margin: 0%;
-    background-color: #E5E5E5;
+    background-color: #fcfcfc;
 }
 .flex-row{
     display: flex;
@@ -123,6 +123,12 @@ button{
     padding-top: 0.5rem;
 }
 
+/* Mobile  Navbar */
+.mobile-navbar{
+    display: none;
+    background-color: #000B17;
+}
+
 
 /* Vertical Menu Bar Section */
 .vertical-menu-bar{
@@ -132,7 +138,7 @@ button{
     flex-direction: column;
     border-radius: 10px;
     justify-content: space-around;
-    height: max-content;
+    height:auto;
 }
 .vertical-menu-bar .logo-div{
     justify-content: center;
@@ -864,6 +870,20 @@ button{
     width: 18px;
 }
 
+.mobile-navbar{
+    display: block;
+    background-color: #000B17;
+    margin: 0rem 0.5rem;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.navbar .navbar-brand img{
+    width: 36px;
+}
+.navbar .navbar-toggler{
+    margin-left: 72.5%;
+    padding: 0;
+}
 
 /* Homepage */
 .homepage-wrapper{
@@ -937,45 +957,43 @@ button{
 /* Main Dashboard Section */
 /* Vertical Menu Bar Section */
 .vertical-menu-bar{
-    padding: 0.5rem 0.5rem;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    justify-content: space-around;
-    margin: 0.5rem;
+    display: none;
 }
-.vertical-menu-bar .logo-div{
+/* .vertical-menu-bar .logo-div{
     justify-content: center;
     margin-bottom: 0.25rem;
 }
 .vertical-menu-bar .logo-div img{
     width: 20%;
-}
-.menu-items-div{
+} */
+.mobile-navbar .menu-items-div{
     height: auto;
     color: #042A2B;
 }
-.menu-items-div .list-items-group{
+.mobile-navbar .menu-items-div .list-items-group{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
     padding: 0%;
 }
-.menu-items-div li{
+.mobile-navbar .menu-items-div li{
     background-color: #fcfcfc;
     list-style-type: none;
     padding: 0.125rem;
     border-radius: 10px;
     margin: 0.125rem 0rem;
+    font-size: 0.5rem;
 }
-.menu-items-div li a{
+.mobile-navbar .menu-items-div li a{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     color: #2b1d04;
+    font-size: 0.5rem;
+
 }
 .menu-items-div li a span:first-child{
     margin-right: 0.5rem;
@@ -986,7 +1004,7 @@ button{
 .menu-items-div li .menu-item{
     font-size: 1.5rem;
 }
-.vertical-menu-bar .reset-shutdown-div{
+.mobile-navbar .reset-shutdown-div{
     justify-content: center;
     margin: 0.5rem 0rem;
 }
@@ -1007,6 +1025,7 @@ button{
     /* justify-content: space-between; */
     height: 100%;
     padding: 0rem 0.5rem;
+    margin-top: 3.875rem;
 }
 
 /* Action Bar Section */
@@ -1228,7 +1247,7 @@ button{
 }
 .motor-speeds-div .card{
     border-radius: 10px;
-    box-shadow: 0 0 1rem rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.8);
 }
 .motor-speeds-div .card-chart{
     border-radius: 10px 10px 0px 0px;
@@ -1414,9 +1433,11 @@ button{
     align-items: center;
     width: 100%;
     height: 100%;
+    margin-top: 4.5rem;
 }
 .operations-page-content h2{
     font-weight: bold;
+    font-size: 1.5rem;
 }
 #add-new-operation{
     background-color: #45C86D;
@@ -1560,7 +1581,7 @@ button{
 
 /* Data Download Section */
 .data-download-page-content{
-
+    margin-top: 4.5rem;
 }
 .data-download-page-content h2{
     font-weight: bold;
@@ -1586,6 +1607,7 @@ button{
 .date-query-div input{
     font-size: 1.125rem;
     /* width: 100%; */
+    color: black;
 }
 
 .data-download-page-content .date-picker{
@@ -1645,7 +1667,7 @@ button{
 
 /* Alarms Page */
 .alarms-page-content{
-
+    margin-top: 4rem;
 }
 .alarms-page-content h2{
     font-weight: bold;
@@ -1653,8 +1675,6 @@ button{
 .alarms-page-content #alarms-display-div{
     margin-top: 1rem;
 }
-
-
 
 }
 
