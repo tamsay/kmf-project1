@@ -1667,15 +1667,26 @@ button{
 
 /* Alarms Page */
 .alarms-page-content{
-    margin-top: 4rem;
+    margin-top: 4.5rem;
 }
 .alarms-page-content h2{
     font-weight: bold;
+    font-size: 1.5rem;
 }
 .alarms-page-content #alarms-display-div{
     margin-top: 1rem;
 }
 
+/* Trendlines Page */
+.trendlines-content{
+    margin-top: 4.5rem;
+}
+.trendlines-content h2{
+    font-size: 1.5rem;
+}
+.trendlines-content #trendlines-display-div{
+    margin-top: 1rem;
+}
 }
 
 
