@@ -94,14 +94,13 @@ setInterval(function() {
   var animation = new am4core.Animation(hand, {
     property: "value",
     to: value
-  }, 10, am4core.ease.cubicOut).start();
+  }, 500, am4core.ease.cubicOut).start();
 }, 2000);
 
 }
 
 let allChartSelector = document.querySelectorAll('.card-chart');
 [...allChartSelector].map(element=>{
-  console.log(element.id)
   let elementId = element.id;
   createChart(elementId)
 })
