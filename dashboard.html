@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body id="dashboard">
 
   <nav class="navbar fixed-top navbar-expand-lg mobile-navbar">
     <a class="navbar-brand" href="#"><img src="assets/images/kmf-logo.jpg" alt="logo">
@@ -37,9 +37,9 @@
     </div>
   </nav>
   
-    <div class="wrapper row">
+    <div class="wrapper row" id="ipad-view">
 
-        <section class="vertical-menu-bar col-md-2">
+        <section id="vertical-menu-bar" class="vertical-menu-bar col-lg-2 col-md-2">
             <div class="logo-div flex-row">
                 <img src="assets/images/kmf-logo.jpg" alt="logo">
             </div>
@@ -63,7 +63,7 @@
 
         </section>
 
-        <section class="page-content col-md-10">
+        <section class="page-content col-12 col-lg-10 col-md-10">
 
             <div class="action-bar-div flex-row">
 
@@ -133,7 +133,7 @@
                 <h2 class="motor-speeds-title text-center">Motor Speeds</h2>
                 <div class="motor-speeds-cardgroup">
                   
-                    <div class="row row-cols-1 row-cols-md-5 g-2">
+                    <div class="row row-cols-1 row-cols-md-3">
                         
                         <div class="col">
                           <div class="card h-100 text-center">
@@ -195,7 +195,7 @@
             <div class="temperatures-humidity-div">
                 <h2 class="temperatures-humidity-title text-center">Temperatures and Humidity</h2>
                 <div class="temperatures-humidity-cardgroup">
-                    <div class="row row-cols-1 row-cols-md-5 g-2">
+                    <div class="row row-cols-1 row-cols-md-3">
                         
                         <div class="col">
                           <div class="card h-100 text-center">
