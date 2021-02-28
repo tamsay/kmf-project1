@@ -1,4 +1,8 @@
 let configurationListModalWrapper = document.querySelector('.modal-wrapper')
+let startBtn = document.querySelector('#send')
+let stopBtn = document.querySelector('#stop')
+let connectInternetBtn = document.querySelector('#connectToInternet')
+let shutdownBtn = document.querySelector('#shutdown-button')
 
 let populateConfigurationList =(list)=>{
 
@@ -121,3 +125,27 @@ let closeOpenDropdown=()=>{
     dropdown.classList.remove('open-dropdown')
     dropdown.classList.add('closed')
 }
+
+let startOperation =(()=>{
+    startBtn.addEventListener('click', ()=>{
+        alert('Operation Started, thanks')
+    })
+})()
+
+let stopOperation =(()=>{
+    stopBtn.addEventListener('click', ()=>{
+        alert('Operation Stopped, thanks')
+    })
+})()
+
+let systemShutdown =(()=>{
+    shutdownBtn.addEventListener('click', ()=>{
+        alert('System Shutting Down, bye')
+    })
+})()
+
+let connectToInternet =(()=>{
+    connectInternetBtn.addEventListener('click', ()=>{
+        alert('Internet Connection Initialized, thanks')
+    })
+})()
