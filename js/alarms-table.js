@@ -28,6 +28,10 @@ let table = new Tabulator("#alarms-display-div", {
 setTimeout(() => {
   let tabledata = [
     {createdAt: "88888888  8888888888888", operationName:"Operation 1", alarmName:"alarm 1", severity: "high", },
+    {createdAt: "8899999  9999999", operationName:"Operation 2", alarmName:"alarm 2", severity: "high", },
+    {createdAt: "11111111  22222222", operationName:"Operation 3", alarmName:"alarm 3", severity: "medium", },
+    {createdAt: "3333333  666666666", operationName:"Operation 4", alarmName:"alarm 4", severity: "high", },
+    {createdAt: "111111111  99887776", operationName:"Operation 5", alarmName:"alarm 5", severity: "low", },
   ];
 
   createAlarmTable(tabledata)
