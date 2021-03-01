@@ -39,6 +39,13 @@ button{
 .closed{
     display: none;
 }
+.enabled{
+    pointer-events: all;
+}
+.disabled{
+    pointer-events: none;
+    background-color: gray !important;
+}
 .card-header{
     padding: 0%;
 }

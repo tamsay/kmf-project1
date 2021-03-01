@@ -144,34 +144,40 @@ let systemShutdown =(()=>{
     })
 })()
 
-let connectToInternet =()=>{
+let connectToInternet =(()=>{
     connectInternetBtn.addEventListener('click', ()=>{
-        alert('Internet Connection Initialized, thanks')
 
         let status = Math.round(Math.random())
 
         if(status === 1){
-            connectInternetBtn.innerText = 'Connected'
+            alert('Internet Connection Initialized, thanks')
+            // connectInternetBtn.innerText = 'Connected'
         }
         else{
             alert('Connection Unsuccessful, kindly try again')
-            connectInternetBtn.innerText = 'Connection Unsuccessful'
+            connectInternetBtn.innerText = "Connect Again"
         }
     })
-}
+})()
 
 // Function to check internet connectivity
 setInterval(() => {
+
     let status = Math.round(Math.random())
 
+    // let status = 0;
+
     if(status === 1){
-        connectInternetBtn.disabled = false;
+        // connectInternetBtn.disabled = false;
         connectInternetBtn.innerText = 'Connect To Internet'
-        connectToInternet();
+        connectInternetBtn.classList.add('enabled')
+        connectInternetBtn.classList.remove('disabled')
     }
     else{
-        connectInternetBtn.disabled = true;
+        // connectInternetBtn.disabled = true;
+        connectInternetBtn.classList.add('disabled')
+        connectInternetBtn.classList.remove('enabled')
         connectInternetBtn.innerText = 'No Internet'
     }
     
-}, 10000);
+}, 30000);
