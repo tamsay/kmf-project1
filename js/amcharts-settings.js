@@ -1,5 +1,5 @@
 
-let createChart =(chartID)=>{
+let createChart =(chartID, maxValue, chartType)=>{
 
 
 // Themes begin
@@ -16,7 +16,7 @@ chart.innerRadius = am4core.percent(85);
 
 var axis = chart.xAxes.push(new am4charts.ValueAxis());
 axis.min = 0;
-axis.max = 3000;
+axis.max = parseInt(`${maxValue}`);
 axis.strictMinMax = true;
 axis.renderer.radius = am4core.percent(105);
 axis.renderer.inside = true;
@@ -38,7 +38,7 @@ var colorSet = new am4core.ColorSet();
 
 var axis2 = chart.xAxes.push(new am4charts.ValueAxis());
 axis2.min = 0;
-axis2.max = 3000;
+axis2.max = parseInt(`${maxValue}`);
 axis2.strictMinMax = true;
 axis2.renderer.labels.template.disabled = true;
 axis2.renderer.ticks.template.disabled = true;
@@ -46,13 +46,13 @@ axis2.renderer.grid.template.disabled = true;
 
 var range0 = axis2.axisRanges.create();
 range0.value = 0;
-range0.endValue = 1500;
+range0.endValue = parseInt(`${(maxValue/2)}`);
 range0.axisFill.fillOpacity = 1;
 range0.axisFill.fill = colorSet.getIndex(0);
 
 var range1 = axis2.axisRanges.create();
-range1.value = 1500;
-range1.endValue = 3000;
+range1.value = parseInt(`${(maxValue/2)}`);
+range1.endValue = parseInt(`${maxValue}`);
 range1.axisFill.fillOpacity = 1;
 range1.axisFill.fill = colorSet.getIndex(2);
 
@@ -89,18 +89,95 @@ hand.events.on("propertychanged", function(ev) {
 });
 
 setInterval(function() {
-  var value = Math.round(Math.random() * 3000);
-  // var value = 1500;
-  var animation = new am4core.Animation(hand, {
-    property: "value",
-    to: value
-  }, 500, am4core.ease.cubicOut).start();
-}, 2000);
+
+  if(chartType === 'blowerSpeed'){
+    var animation = new am4core.Animation(hand, {
+      property: "value",
+      to: getChartValues().blowerSpeed
+    }, 500, am4core.ease.cubicOut).start();
+  }
+
+  else  if(chartType === 'feederSpeed'){
+    var animation = new am4core.Animation(hand, {
+      property: "value",
+      to: getChartValues().feederSpeed
+    }, 500, am4core.ease.cubicOut).start();
+  }
+
+  else  if(chartType === 'mixerSpeed'){
+    var animation = new am4core.Animation(hand, {
+      property: "value",
+      to: getChartValues().mixerSpeed
+    }, 500, am4core.ease.cubicOut).start();
+  }
+
+  else  if(chartType === 'airVelocity'){
+    var animation = new am4core.Animation(hand, {
+      property: "value",
+      to: getChartValues().airVelocity
+    }, 500, am4core.ease.cubicOut).start();
+  }
+
+  else {
+    var animation = new am4core.Animation(hand, {
+      property: "value",
+      to: getChartValues().airPressure
+    }, 500, am4core.ease.cubicOut).start();
+  }
+
+}, 3000);
 
 }
 
-let allChartSelector = document.querySelectorAll('.card-chart');
-[...allChartSelector].map(element=>{
-  let elementId = element.id;
-  createChart(elementId)
-})
+let getChartValues =()=>{
+    // fetch speed values for each chart
+    // fetch function for each category will come here
+
+    let blowerSpeed = Math.round(Math.random() * 3000);
+    let feederSpeed = Math.round(Math.random() * 3000);
+    let mixerSpeed = Math.round(Math.random() * 3000);
+    let airVelocity = Math.round(Math.random() * 1000);
+    let airPressure = Math.round(Math.random() * 7);
+
+    let chartValues = {
+      blowerSpeed: blowerSpeed,
+      feederSpeed: feederSpeed,
+      mixerSpeed: mixerSpeed,
+      airVelocity: airVelocity,
+      airPressure: airPressure,
+    }
+
+    return chartValues
+};
+
+
+      let blowerSpeedChart =(()=>{
+          let blowerSpeedId = document.querySelector('#blowerSpeedChart').id
+          let maxSpeed = 3000;
+          createChart(blowerSpeedId, maxSpeed, 'blowerSpeed');
+      })()
+
+      let feederSpeedChart =(()=>{
+        let feederSpeedId = document.querySelector('#feederSpeedChart').id
+        let maxSpeed = 3000;
+        createChart(feederSpeedId, maxSpeed, 'feederSpeed');
+      })()
+
+      let mixerSpeedChart =(()=>{
+        let mixerSpeedId = document.querySelector('#mixerSpeedChart').id
+        let maxSpeed = 3000;
+        createChart(mixerSpeedId, maxSpeed, 'mixerSpeed');
+      })()  
+
+      let airVelocityChart =(()=>{
+        let airVelocityId = document.querySelector('#airVelocityChart').id
+        let maxSpeed = 1000;
+        createChart(airVelocityId, maxSpeed, 'airVelocity');
+      })()  
+
+      let airPressureChart =(()=>{
+        let airPressureId = document.querySelector('#airPressureChart').id
+        let maxPressure = 7;
+        createChart(airPressureId, maxPressure, 'airPressure');
+      })()  
+

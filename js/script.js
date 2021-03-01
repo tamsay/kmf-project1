@@ -144,8 +144,34 @@ let systemShutdown =(()=>{
     })
 })()
 
-let connectToInternet =(()=>{
+let connectToInternet =()=>{
     connectInternetBtn.addEventListener('click', ()=>{
         alert('Internet Connection Initialized, thanks')
+
+        let status = Math.round(Math.random())
+
+        if(status === 1){
+            connectInternetBtn.innerText = 'Connected'
+        }
+        else{
+            alert('Connection Unsuccessful, kindly try again')
+            connectInternetBtn.innerText = 'Connection Unsuccessful'
+        }
     })
-})()
+}
+
+// Function to check internet connectivity
+setInterval(() => {
+    let status = Math.round(Math.random())
+
+    if(status === 1){
+        connectInternetBtn.disabled = false;
+        connectInternetBtn.innerText = 'Connect To Internet'
+        connectToInternet();
+    }
+    else{
+        connectInternetBtn.disabled = true;
+        connectInternetBtn.innerText = 'No Internet'
+    }
+    
+}, 10000);

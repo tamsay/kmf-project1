@@ -415,6 +415,9 @@ button{
 .motor-speeds-div .card-chart{
     border-radius: 10px 10px 0px 0px;
 }
+.motor-speeds-div .card-chart img{
+    width: 90%;
+}
 .motor-speeds-div .card-footer{
     padding: 0%;
 }
@@ -474,17 +477,17 @@ button{
 }
 
 /* Air Volume Chart */
-#airVolumeChart{
+#airVelocityChart{
     width: 100%;
 }
-#airVolumeChart > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
+#airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
     display: none;
 }
-#airVolumeChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(3) > g{
+#airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(3) > g{
     font-size: 0.625rem;
     font-weight: bold;
 }
-#airVolumeChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(6){
+#airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(6){
     font-weight: bold;
     font-size: 1.75rem;
 }
@@ -1336,17 +1339,17 @@ button{
 }
 
 /* Air Volume Chart */
-#airVolumeChart{
+#airVelocityChart{
     width: 100%;
 }
-#airVolumeChart > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
+#airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
     display: none;
 }
-#airVolumeChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(3) > g{
+#airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(3) > g{
     font-size: 0.625rem;
     font-weight: bold;
 }
-#airVolumeChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(6){
+#airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(6){
     font-weight: bold;
     font-size: 1.5rem;
 }
@@ -2086,17 +2089,17 @@ button{
 }
 
 /* Air Volume Chart */
-#airVolumeChart{
+#airVelocityChart{
     width: 100%;
 }
-#airVolumeChart > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
+#airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
     display: none;
 }
-#airVolumeChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(3) > g{
+#airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(3) > g{
     font-size: 0.625rem;
     font-weight: bold;
 }
-#airVolumeChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(6){
+#airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(6){
     font-weight: bold;
     font-size: 1.5rem;
 }
@@ -2823,17 +2826,17 @@ button{
 }
 
 /* Air Volume Chart */
-#airVolumeChart{
+#airVelocityChart{
     width: 100%;
 }
-#airVolumeChart > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
+#airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
     display: none;
 }
-#airVolumeChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(3) > g{
+#airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(3) > g{
     font-size: 0.625rem;
     font-weight: bold;
 }
-#airVolumeChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(6){
+#airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(6){
     font-weight: bold;
     font-size: 1.5rem;
 }
@@ -3589,17 +3592,17 @@ button{
     }
     
     /* Air Volume Chart */
-    #airVolumeChart{
+    #airVelocityChart{
         width: 100%;
     }
-    #airVolumeChart > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
+    #airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
         display: none;
     }
-    #airVolumeChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(3) > g{
+    #airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(3) > g{
         font-size: 0.5rem;
         font-weight: bold;
     }
-    #airVolumeChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(6){
+    #airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(6){
         font-weight: bold;
         font-size: 1.75rem;
     }
