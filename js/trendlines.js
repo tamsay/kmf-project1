@@ -1,52 +1,179 @@
-// am4core.ready(function() {
+am4core.ready(function() {
 
-// // Themes begin
-// am4core.useTheme(am4themes_animated);
-// // Themes end
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
 
-// // Create chart instance
-// let chart = am4core.create("trendlines-display-div", am4charts.XYChart);
+// Create chart instance
+let chart = am4core.create("speed-display-div", am4charts.XYChart);
 
-// // Add data
-// chart.data = [
-//   {date:new Date(2019,5,12), value1:50, value2:48, previousDate:new Date(2019, 5, 5)},
-//   {date:new Date(2019,5,13), value1:53, value2:51, previousDate:new Date(2019, 5, 6)},
-//   {date:new Date(2019,5,14), value1:56, value2:58, previousDate:new Date(2019, 5, 7)},
-//   {date:new Date(2019,5,15), value1:52, value2:53, previousDate:new Date(2019, 5, 8)},
-//   {date:new Date(2019,5,16), value1:48, value2:44, previousDate:new Date(2019, 5, 9)},
-//   {date:new Date(2019,5,17), value1:47, value2:42, previousDate:new Date(2019, 5, 10)},
-//   {date:new Date(2019,5,18), value1:59, value2:55, previousDate:new Date(2019, 5, 11)}
-// ]
+// Add data
+chart.data = [
+  {date:new Date(2019,5,12), value1:50, value2:48, value3:30, previousDate:new Date(2019, 5, 5)},
+  {date:new Date(2019,5,13), value1:53, value2:51, value3:39, previousDate:new Date(2019, 5, 6)},
+  {date:new Date(2019,5,14), value1:56, value2:58, value3:20, previousDate:new Date(2019, 5, 7)},
+  {date:new Date(2019,5,15), value1:52, value2:53, value3:43, previousDate:new Date(2019, 5, 8)},
+  {date:new Date(2019,5,16), value1:48, value2:44, value3:55, previousDate:new Date(2019, 5, 9)},
+  {date:new Date(2019,5,17), value1:47, value2:42, value3:60, previousDate:new Date(2019, 5, 10)},
+  {date:new Date(2019,5,18), value1:59, value2:55, value3:40, previousDate:new Date(2019, 5, 11)}
+]
 
-// // Create axes
-// let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-// dateAxis.renderer.minGridDistance = 50;
+// Create axes
+let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+dateAxis.renderer.minGridDistance = 50;
 
-// let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.renderer.minGridDistance = 50;
 
-// // Create series
-// let series = chart.series.push(new am4charts.LineSeries());
-// series.dataFields.valueY = "value1";
-// series.dataFields.dateX = "date";
-// series.strokeWidth = 2;
-// series.minBulletDistance = 10;
-// series.tooltipText = "[bold]{date.formatDate()}:[/] {value1}\n[bold]{previousDate.formatDate()}:[/] {value2}";
-// series.tooltip.pointerOrientation = "vertical";
 
-// // Create series
-// let series2 = chart.series.push(new am4charts.LineSeries());
-// series2.dataFields.valueY = "value2";
-// series2.dataFields.dateX = "date";
-// series2.strokeWidth = 2;
-// series2.strokeDasharray = "3,4";
-// series2.stroke = series.stroke;
+// Create series
+let series = chart.series.push(new am4charts.LineSeries());
+series.dataFields.valueY = "value1";
+series.dataFields.dateX = "date";
+series.strokeWidth = 3;
+series.minBulletDistance = 10;
+series.tooltipText = "[bold]{date.formatDate()}:[/] {value1}\n[bold]{previousDate.formatDate()}:[/] {value2}";
+series.tooltip.pointerOrientation = "vertical";
 
-// // Add cursor
-// chart.cursor = new am4charts.XYCursor();
-// chart.cursor.xAxis = dateAxis;
+// Create series
+let series2 = chart.series.push(new am4charts.LineSeries());
+series2.dataFields.valueY = "value2";
+series2.dataFields.dateX = "date";
+series2.strokeWidth = 3;
+series2.strokeDasharray = "3,4";
+series2.stroke = series.stroke;
 
-// }); // end am4core.ready()
+// Create series
+let series3 = chart.series.push(new am4charts.LineSeries());
+series3.dataFields.valueY = "value3";
+series3.dataFields.dateX = "date";
+series3.strokeWidth = 3;
+series3.strokeDasharray = "8,9";
+series3.stroke = series.stroke;
 
+// Add cursor
+chart.cursor = new am4charts.XYCursor();
+chart.cursor.xAxis = dateAxis;
+
+}); 
+
+am4core.ready(function() {
+
+  // Themes begin
+  am4core.useTheme(am4themes_animated);
+  // Themes end
+  
+  // Create chart instance
+  let chart = am4core.create("temperature-display-div", am4charts.XYChart);
+  
+  // Add data
+  chart.data = [
+    {date:new Date(2019,5,12), value1:50, value2:48, value3:30, previousDate:new Date(2019, 5, 5)},
+    {date:new Date(2019,5,13), value1:53, value2:51, value3:39, previousDate:new Date(2019, 5, 6)},
+    {date:new Date(2019,5,14), value1:56, value2:58, value3:20, previousDate:new Date(2019, 5, 7)},
+    {date:new Date(2019,5,15), value1:52, value2:53, value3:43, previousDate:new Date(2019, 5, 8)},
+    {date:new Date(2019,5,16), value1:48, value2:44, value3:55, previousDate:new Date(2019, 5, 9)},
+    {date:new Date(2019,5,17), value1:47, value2:42, value3:60, previousDate:new Date(2019, 5, 10)},
+    {date:new Date(2019,5,18), value1:59, value2:55, value3:40, previousDate:new Date(2019, 5, 11)}
+  ]
+  
+  // Create axes
+  let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+  dateAxis.renderer.minGridDistance = 50;
+  
+  let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+  valueAxis.renderer.minGridDistance = 50;
+  
+  
+  // Create series
+  let series = chart.series.push(new am4charts.LineSeries());
+  series.dataFields.valueY = "value1";
+  series.dataFields.dateX = "date";
+  series.strokeWidth = 3;
+  series.minBulletDistance = 10;
+  series.tooltipText = "[bold]{date.formatDate()}:[/] {value1}\n[bold]{previousDate.formatDate()}:[/] {value2}";
+  series.tooltip.pointerOrientation = "vertical";
+  
+  // Create series
+  let series2 = chart.series.push(new am4charts.LineSeries());
+  series2.dataFields.valueY = "value2";
+  series2.dataFields.dateX = "date";
+  series2.strokeWidth = 3;
+  series2.strokeDasharray = "3,4";
+  series2.stroke = series.stroke;
+  
+  // Create series
+  let series3 = chart.series.push(new am4charts.LineSeries());
+  series3.dataFields.valueY = "value3";
+  series3.dataFields.dateX = "date";
+  series3.strokeWidth = 3;
+  series3.strokeDasharray = "8,9";
+  series3.stroke = series.stroke;
+  
+  // Add cursor
+  chart.cursor = new am4charts.XYCursor();
+  chart.cursor.xAxis = dateAxis;
+  
+  }); 
+
+  am4core.ready(function() {
+
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
+    
+    // Create chart instance
+    let chart = am4core.create("pressure-display-div", am4charts.XYChart);
+    
+    // Add data
+    chart.data = [
+      {date:new Date(2019,5,12), value1:50, value2:48, value3:30, previousDate:new Date(2019, 5, 5)},
+      {date:new Date(2019,5,13), value1:53, value2:51, value3:39, previousDate:new Date(2019, 5, 6)},
+      {date:new Date(2019,5,14), value1:56, value2:58, value3:20, previousDate:new Date(2019, 5, 7)},
+      {date:new Date(2019,5,15), value1:52, value2:53, value3:43, previousDate:new Date(2019, 5, 8)},
+      {date:new Date(2019,5,16), value1:48, value2:44, value3:55, previousDate:new Date(2019, 5, 9)},
+      {date:new Date(2019,5,17), value1:47, value2:42, value3:60, previousDate:new Date(2019, 5, 10)},
+      {date:new Date(2019,5,18), value1:59, value2:55, value3:40, previousDate:new Date(2019, 5, 11)}
+    ]
+    
+    // Create axes
+    let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+    dateAxis.renderer.minGridDistance = 50;
+    
+    let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.renderer.minGridDistance = 50;
+    
+    
+    // Create series
+    let series = chart.series.push(new am4charts.LineSeries());
+    series.dataFields.valueY = "value1";
+    series.dataFields.dateX = "date";
+    series.strokeWidth = 3;
+    series.minBulletDistance = 10;
+    series.tooltipText = "[bold]{date.formatDate()}:[/] {value1}\n[bold]{previousDate.formatDate()}:[/] {value2}";
+    series.tooltip.pointerOrientation = "vertical";
+    
+    // Create series
+    let series2 = chart.series.push(new am4charts.LineSeries());
+    series2.dataFields.valueY = "value2";
+    series2.dataFields.dateX = "date";
+    series2.strokeWidth = 3;
+    series2.strokeDasharray = "3,4";
+    series2.stroke = series.stroke;
+    
+    // Create series
+    let series3 = chart.series.push(new am4charts.LineSeries());
+    series3.dataFields.valueY = "value3";
+    series3.dataFields.dateX = "date";
+    series3.strokeWidth = 3;
+    series3.strokeDasharray = "8,9";
+    series3.stroke = series.stroke;
+    
+    // Add cursor
+    chart.cursor = new am4charts.XYCursor();
+    chart.cursor.xAxis = dateAxis;
+    
+    }); 
 
 
 // window.onload = function () {
@@ -298,367 +425,366 @@
 
 
 
-// window.onload = function () {
 
-    let speedTrends=(()=>{
+//     let speedTrends=(()=>{
 
    
-let dataPoints1 = [];
-let dataPoints2 = [];
-let dataPoints3 = [];
+// let dataPoints1 = [];
+// let dataPoints2 = [];
+// let dataPoints3 = [];
 
-let chart = new CanvasJS.Chart("speed-display-div", {
-	zoomEnabled: true,
-	title: {
-		text: "Speeds Comparison"
-	},
-	axisX: {
-		title: "chart updates every 3 secs"
-	},
-	axisY:{
-        suffix: 'rpm'
-	}, 
-	toolTip: {
-		shared: true
-	},
-	legend: {
-		cursor:"pointer",
-		verticalAlign: "top",
-		fontSize: 22,
-		fontColor: "dimGrey",
-		itemclick : toggleDataSeries
-	},
-	data: [{ 
-		type: "line",
-		xValueType: "dateTime",
-		yValueFormatString: "$####.00",
-		xValueFormatString: "hh:mm:ss TT",
-		showInLegend: true,
-		name: "Motor Speed",
-		dataPoints: dataPoints1
-		},
-		{				
-			type: "line",
-			xValueType: "dateTime",
-			yValueFormatString: "$####.00",
-			showInLegend: true,
-			name: "Mixer Speed" ,
-			dataPoints: dataPoints2
-        },
-        {				
-            type: "line",
-            xValueType: "dateTime",
-            yValueFormatString: "$####.00",
-            showInLegend: true,
-            name: "Blower Speed" ,
-            dataPoints: dataPoints3
-        }]
-});
+// let chart = new CanvasJS.Chart("speed-display-div", {
+// 	zoomEnabled: true,
+// 	title: {
+// 		text: "Speeds Comparison"
+// 	},
+// 	axisX: {
+// 		title: "chart updates every 3 secs"
+// 	},
+// 	axisY:{
+//         suffix: 'rpm'
+// 	}, 
+// 	toolTip: {
+// 		shared: true
+// 	},
+// 	legend: {
+// 		cursor:"pointer",
+// 		verticalAlign: "top",
+// 		fontSize: 22,
+// 		fontColor: "dimGrey",
+// 		itemclick : toggleDataSeries
+// 	},
+// 	data: [{ 
+// 		type: "line",
+// 		xValueType: "dateTime",
+// 		yValueFormatString: "$####.00",
+// 		xValueFormatString: "hh:mm:ss TT",
+// 		showInLegend: true,
+// 		name: "Motor Speed",
+// 		dataPoints: dataPoints1
+// 		},
+// 		{				
+// 			type: "line",
+// 			xValueType: "dateTime",
+// 			yValueFormatString: "$####.00",
+// 			showInLegend: true,
+// 			name: "Mixer Speed" ,
+// 			dataPoints: dataPoints2
+//         },
+//         {				
+//             type: "line",
+//             xValueType: "dateTime",
+//             yValueFormatString: "$####.00",
+//             showInLegend: true,
+//             name: "Blower Speed" ,
+//             dataPoints: dataPoints3
+//         }]
+// });
 
-function toggleDataSeries(e) {
-	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-		e.dataSeries.visible = false;
-	}
-	else {
-		e.dataSeries.visible = true;
-	}
-	chart.render();
-}
+// function toggleDataSeries(e) {
+// 	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+// 		e.dataSeries.visible = false;
+// 	}
+// 	else {
+// 		e.dataSeries.visible = true;
+// 	}
+// 	chart.render();
+// }
 
-let updateInterval = 3000;
-// initial value
-let yValue1 = 200; 
-let yValue2 = 30;
-let yValue3 = 700;
+// let updateInterval = 3000;
+// // initial value
+// let yValue1 = 200; 
+// let yValue2 = 30;
+// let yValue3 = 700;
 
-let time = new Date;
-// starting at 9.30 am
-time.setHours(9);
-time.setMinutes(30);
-time.setSeconds(00);
-time.setMilliseconds(00);
+// let time = new Date;
+// // starting at 9.30 am
+// time.setHours(9);
+// time.setMinutes(30);
+// time.setSeconds(00);
+// time.setMilliseconds(00);
 
-function updateChart(count) {
-	count = count || 1;
-	let deltaY1, deltaY2, deltaY3;
-	for (let i = 0; i < count; i++) {
-		time.setTime(time.getTime()+ updateInterval);
-		deltaY1 = 9.5 + Math.random() *(-.5-.5);
-		deltaY2 = 6.5 + Math.random() *(-.5-.5);
-        deltaY3 = 1.5 + Math.random() *(-.5-.5);
+// function updateChart(count) {
+// 	count = count || 1;
+// 	let deltaY1, deltaY2, deltaY3;
+// 	for (let i = 0; i < count; i++) {
+// 		time.setTime(time.getTime()+ updateInterval);
+// 		deltaY1 = 9.5 + Math.random() *(-.5-.5);
+// 		deltaY2 = 6.5 + Math.random() *(-.5-.5);
+//         deltaY3 = 1.5 + Math.random() *(-.5-.5);
 
-	// adding random value and rounding it to two digits. 
-	yValue1 = Math.round((yValue1 + deltaY1)*100)/100;
-	yValue2 = Math.round((yValue2 + deltaY2)*100)/100;
-	yValue3 = Math.round((yValue3 + deltaY3)*100)/100;
+// 	// adding random value and rounding it to two digits. 
+// 	yValue1 = Math.round((yValue1 + deltaY1)*100)/100;
+// 	yValue2 = Math.round((yValue2 + deltaY2)*100)/100;
+// 	yValue3 = Math.round((yValue3 + deltaY3)*100)/100;
 
-	// pushing the new values
-	dataPoints1.push({
-		x: time.getTime(),
-		y: yValue1
-	});
-	dataPoints2.push({
-		x: time.getTime(),
-		y: yValue2
-	});
-    dataPoints3.push({
-		x: time.getTime(),
-		y: yValue3
-	});
-	}
+// 	// pushing the new values
+// 	dataPoints1.push({
+// 		x: time.getTime(),
+// 		y: yValue1
+// 	});
+// 	dataPoints2.push({
+// 		x: time.getTime(),
+// 		y: yValue2
+// 	});
+//     dataPoints3.push({
+// 		x: time.getTime(),
+// 		y: yValue3
+// 	});
+// 	}
 
-	// updating legend text with  updated with y Value 
-	chart.options.data[0].legendText = " Motor Speed " + yValue1;
-	chart.options.data[1].legendText = " Feeder Speed " + yValue2; 
-    chart.options.data[2].legendText = " Blower Speed " + yValue3; 
+// 	// updating legend text with  updated with y Value 
+// 	chart.options.data[0].legendText = " Motor Speed " + yValue1;
+// 	chart.options.data[1].legendText = " Feeder Speed " + yValue2; 
+//     chart.options.data[2].legendText = " Blower Speed " + yValue3; 
 
-	chart.render();
-}
-// generates first set of dataPoints 
-updateChart(100);	
-setInterval(function(){updateChart()}, updateInterval);
-})()
+// 	chart.render();
+// }
+// // generates first set of dataPoints 
+// updateChart(100);	
+// setInterval(function(){updateChart()}, updateInterval);
+// })()
 
 
 
-let pressureTrends =(()=>{
+// let pressureTrends =(()=>{
 
-    let dataPoints1 = [];
-    let dataPoints2 = [];
-    let dataPoints3 = [];
+//     let dataPoints1 = [];
+//     let dataPoints2 = [];
+//     let dataPoints3 = [];
     
-    let chart = new CanvasJS.Chart("pressure-display-div", {
-        zoomEnabled: true,
-        title: {
-            text: "Pressure Comparison"
-        },
-        axisX: {
-            title: "chart updates every 3 secs"
-        },
-        axisY:{
-            suffix: 'rpm'
-        }, 
-        toolTip: {
-            shared: true
-        },
-        legend: {
-            cursor:"pointer",
-            verticalAlign: "top",
-            fontSize: 22,
-            fontColor: "dimGrey",
-            itemclick : toggleDataSeries
-        },
-        data: [{ 
-            type: "line",
-            xValueType: "dateTime",
-            yValueFormatString: "$####.00",
-            xValueFormatString: "hh:mm:ss TT",
-            showInLegend: true,
-            name: "Motor Speed",
-            dataPoints: dataPoints1
-            },
-            {				
-                type: "line",
-                xValueType: "dateTime",
-                yValueFormatString: "$####.00",
-                showInLegend: true,
-                name: "Mixer Speed" ,
-                dataPoints: dataPoints2
-            },
-            {				
-                type: "line",
-                xValueType: "dateTime",
-                yValueFormatString: "$####.00",
-                showInLegend: true,
-                name: "Blower Speed" ,
-                dataPoints: dataPoints3
-            }]
-    });
+//     let chart = new CanvasJS.Chart("pressure-display-div", {
+//         zoomEnabled: true,
+//         title: {
+//             text: "Pressure Comparison"
+//         },
+//         axisX: {
+//             title: "chart updates every 3 secs"
+//         },
+//         axisY:{
+//             suffix: 'rpm'
+//         }, 
+//         toolTip: {
+//             shared: true
+//         },
+//         legend: {
+//             cursor:"pointer",
+//             verticalAlign: "top",
+//             fontSize: 22,
+//             fontColor: "dimGrey",
+//             itemclick : toggleDataSeries
+//         },
+//         data: [{ 
+//             type: "line",
+//             xValueType: "dateTime",
+//             yValueFormatString: "$####.00",
+//             xValueFormatString: "hh:mm:ss TT",
+//             showInLegend: true,
+//             name: "Motor Speed",
+//             dataPoints: dataPoints1
+//             },
+//             {				
+//                 type: "line",
+//                 xValueType: "dateTime",
+//                 yValueFormatString: "$####.00",
+//                 showInLegend: true,
+//                 name: "Mixer Speed" ,
+//                 dataPoints: dataPoints2
+//             },
+//             {				
+//                 type: "line",
+//                 xValueType: "dateTime",
+//                 yValueFormatString: "$####.00",
+//                 showInLegend: true,
+//                 name: "Blower Speed" ,
+//                 dataPoints: dataPoints3
+//             }]
+//     });
     
-    function toggleDataSeries(e) {
-        if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-            e.dataSeries.visible = false;
-        }
-        else {
-            e.dataSeries.visible = true;
-        }
-        chart.render();
-    }
+//     function toggleDataSeries(e) {
+//         if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+//             e.dataSeries.visible = false;
+//         }
+//         else {
+//             e.dataSeries.visible = true;
+//         }
+//         chart.render();
+//     }
     
-    let updateInterval = 3000;
-    // initial value
-    let yValue1 = 200; 
-    let yValue2 = 30;
-    let yValue3 = 700;
+//     let updateInterval = 3000;
+//     // initial value
+//     let yValue1 = 200; 
+//     let yValue2 = 30;
+//     let yValue3 = 700;
     
-    let time = new Date;
-    // starting at 9.30 am
-    time.setHours(9);
-    time.setMinutes(30);
-    time.setSeconds(00);
-    time.setMilliseconds(00);
+//     let time = new Date;
+//     // starting at 9.30 am
+//     time.setHours(9);
+//     time.setMinutes(30);
+//     time.setSeconds(00);
+//     time.setMilliseconds(00);
     
-    function updateChart(count) {
-        count = count || 1;
-        let deltaY1, deltaY2, deltaY3;
-        for (let i = 0; i < count; i++) {
-            time.setTime(time.getTime()+ updateInterval);
-            deltaY1 = 9.5 + Math.random() *(-.5-.5);
-            deltaY2 = 6.5 + Math.random() *(-.5-.5);
-            deltaY3 = 1.5 + Math.random() *(-.5-.5);
+//     function updateChart(count) {
+//         count = count || 1;
+//         let deltaY1, deltaY2, deltaY3;
+//         for (let i = 0; i < count; i++) {
+//             time.setTime(time.getTime()+ updateInterval);
+//             deltaY1 = 9.5 + Math.random() *(-.5-.5);
+//             deltaY2 = 6.5 + Math.random() *(-.5-.5);
+//             deltaY3 = 1.5 + Math.random() *(-.5-.5);
     
-        // adding random value and rounding it to two digits. 
-        yValue1 = Math.round((yValue1 + deltaY1)*100)/100;
-        yValue2 = Math.round((yValue2 + deltaY2)*100)/100;
-        yValue3 = Math.round((yValue3 + deltaY3)*100)/100;
+//         // adding random value and rounding it to two digits. 
+//         yValue1 = Math.round((yValue1 + deltaY1)*100)/100;
+//         yValue2 = Math.round((yValue2 + deltaY2)*100)/100;
+//         yValue3 = Math.round((yValue3 + deltaY3)*100)/100;
     
-        // pushing the new values
-        dataPoints1.push({
-            x: time.getTime(),
-            y: yValue1
-        });
-        dataPoints2.push({
-            x: time.getTime(),
-            y: yValue2
-        });
-        dataPoints3.push({
-            x: time.getTime(),
-            y: yValue3
-        });
-        }
+//         // pushing the new values
+//         dataPoints1.push({
+//             x: time.getTime(),
+//             y: yValue1
+//         });
+//         dataPoints2.push({
+//             x: time.getTime(),
+//             y: yValue2
+//         });
+//         dataPoints3.push({
+//             x: time.getTime(),
+//             y: yValue3
+//         });
+//         }
     
-        // updating legend text with  updated with y Value 
-        chart.options.data[0].legendText = " Motor Speed " + yValue1;
-        chart.options.data[1].legendText = " Feeder Speed " + yValue2; 
-        chart.options.data[2].legendText = " Blower Speed " + yValue3; 
+//         // updating legend text with  updated with y Value 
+//         chart.options.data[0].legendText = " Motor Speed " + yValue1;
+//         chart.options.data[1].legendText = " Feeder Speed " + yValue2; 
+//         chart.options.data[2].legendText = " Blower Speed " + yValue3; 
     
-        chart.render();
-    }
-    // generates first set of dataPoints 
-    updateChart(100);	
-    setInterval(function(){updateChart()}, updateInterval);
+//         chart.render();
+//     }
+//     // generates first set of dataPoints 
+//     updateChart(100);	
+//     setInterval(function(){updateChart()}, updateInterval);
 
-})()
+// })()
 
 
 
-let temperatureTrends =(()=>{
+// let temperatureTrends =(()=>{
 
-        let dataPoints1 = [];
-        let dataPoints2 = [];
-        let dataPoints3 = [];
+//         let dataPoints1 = [];
+//         let dataPoints2 = [];
+//         let dataPoints3 = [];
         
-        let chart = new CanvasJS.Chart("temperature-display-div", {
-            zoomEnabled: true,
-            title: {
-                text: "Temperatures Comparison"
-            },
-            axisX: {
-                title: "chart updates every 3 secs"
-            },
-            axisY:{
-                suffix: 'rpm'
-            }, 
-            toolTip: {
-                shared: true
-            },
-            legend: {
-                cursor:"pointer",
-                verticalAlign: "top",
-                fontSize: 22,
-                fontColor: "dimGrey",
-                itemclick : toggleDataSeries
-            },
-            data: [{ 
-                type: "line",
-                xValueType: "dateTime",
-                yValueFormatString: "$####.00",
-                xValueFormatString: "hh:mm:ss TT",
-                showInLegend: true,
-                name: "Motor Speed",
-                dataPoints: dataPoints1
-                },
-                {				
-                    type: "line",
-                    xValueType: "dateTime",
-                    yValueFormatString: "$####.00",
-                    showInLegend: true,
-                    name: "Mixer Speed" ,
-                    dataPoints: dataPoints2
-                },
-                {				
-                    type: "line",
-                    xValueType: "dateTime",
-                    yValueFormatString: "$####.00",
-                    showInLegend: true,
-                    name: "Blower Speed" ,
-                    dataPoints: dataPoints3
-                }]
-        });
+//         let chart = new CanvasJS.Chart("temperature-display-div", {
+//             zoomEnabled: true,
+//             title: {
+//                 text: "Temperatures Comparison"
+//             },
+//             axisX: {
+//                 title: "chart updates every 3 secs"
+//             },
+//             axisY:{
+//                 suffix: 'rpm'
+//             }, 
+//             toolTip: {
+//                 shared: true
+//             },
+//             legend: {
+//                 cursor:"pointer",
+//                 verticalAlign: "top",
+//                 fontSize: 22,
+//                 fontColor: "dimGrey",
+//                 itemclick : toggleDataSeries
+//             },
+//             data: [{ 
+//                 type: "line",
+//                 xValueType: "dateTime",
+//                 yValueFormatString: "$####.00",
+//                 xValueFormatString: "hh:mm:ss TT",
+//                 showInLegend: true,
+//                 name: "Motor Speed",
+//                 dataPoints: dataPoints1
+//                 },
+//                 {				
+//                     type: "line",
+//                     xValueType: "dateTime",
+//                     yValueFormatString: "$####.00",
+//                     showInLegend: true,
+//                     name: "Mixer Speed" ,
+//                     dataPoints: dataPoints2
+//                 },
+//                 {				
+//                     type: "line",
+//                     xValueType: "dateTime",
+//                     yValueFormatString: "$####.00",
+//                     showInLegend: true,
+//                     name: "Blower Speed" ,
+//                     dataPoints: dataPoints3
+//                 }]
+//         });
         
-        function toggleDataSeries(e) {
-            if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-                e.dataSeries.visible = false;
-            }
-            else {
-                e.dataSeries.visible = true;
-            }
-            chart.render();
-        }
+//         function toggleDataSeries(e) {
+//             if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+//                 e.dataSeries.visible = false;
+//             }
+//             else {
+//                 e.dataSeries.visible = true;
+//             }
+//             chart.render();
+//         }
         
-        let updateInterval = 3000;
-        // initial value
-        let yValue1 = 200; 
-        let yValue2 = 30;
-        let yValue3 = 700;
+//         let updateInterval = 3000;
+//         // initial value
+//         let yValue1 = 200; 
+//         let yValue2 = 30;
+//         let yValue3 = 700;
         
-        let time = new Date;
-        // starting at 9.30 am
-        time.setHours(9);
-        time.setMinutes(30);
-        time.setSeconds(00);
-        time.setMilliseconds(00);
+//         let time = new Date;
+//         // starting at 9.30 am
+//         time.setHours(9);
+//         time.setMinutes(30);
+//         time.setSeconds(00);
+//         time.setMilliseconds(00);
         
-        function updateChart(count) {
-            count = count || 1;
-            let deltaY1, deltaY2, deltaY3;
-            for (let i = 0; i < count; i++) {
-                time.setTime(time.getTime()+ updateInterval);
-                deltaY1 = 9.5 + Math.random() *(-.5-.5);
-                deltaY2 = 6.5 + Math.random() *(-.5-.5);
-                deltaY3 = 1.5 + Math.random() *(-.5-.5);
+//         function updateChart(count) {
+//             count = count || 1;
+//             let deltaY1, deltaY2, deltaY3;
+//             for (let i = 0; i < count; i++) {
+//                 time.setTime(time.getTime()+ updateInterval);
+//                 deltaY1 = 9.5 + Math.random() *(-.5-.5);
+//                 deltaY2 = 6.5 + Math.random() *(-.5-.5);
+//                 deltaY3 = 1.5 + Math.random() *(-.5-.5);
         
-            // adding random value and rounding it to two digits. 
-            yValue1 = Math.round((yValue1 + deltaY1)*100)/100;
-            yValue2 = Math.round((yValue2 + deltaY2)*100)/100;
-            yValue3 = Math.round((yValue3 + deltaY3)*100)/100;
+//             // adding random value and rounding it to two digits. 
+//             yValue1 = Math.round((yValue1 + deltaY1)*100)/100;
+//             yValue2 = Math.round((yValue2 + deltaY2)*100)/100;
+//             yValue3 = Math.round((yValue3 + deltaY3)*100)/100;
         
-            // pushing the new values
-            dataPoints1.push({
-                x: time.getTime(),
-                y: yValue1
-            });
-            dataPoints2.push({
-                x: time.getTime(),
-                y: yValue2
-            });
-            dataPoints3.push({
-                x: time.getTime(),
-                y: yValue3
-            });
-            }
+//             // pushing the new values
+//             dataPoints1.push({
+//                 x: time.getTime(),
+//                 y: yValue1
+//             });
+//             dataPoints2.push({
+//                 x: time.getTime(),
+//                 y: yValue2
+//             });
+//             dataPoints3.push({
+//                 x: time.getTime(),
+//                 y: yValue3
+//             });
+//             }
         
-            // updating legend text with  updated with y Value 
-            chart.options.data[0].legendText = " Motor Speed " + yValue1;
-            chart.options.data[1].legendText = " Feeder Speed " + yValue2; 
-            chart.options.data[2].legendText = " Blower Speed " + yValue3; 
+//             // updating legend text with  updated with y Value 
+//             chart.options.data[0].legendText = " Motor Speed " + yValue1;
+//             chart.options.data[1].legendText = " Feeder Speed " + yValue2; 
+//             chart.options.data[2].legendText = " Blower Speed " + yValue3; 
         
-            chart.render();
-        }
-        // generates first set of dataPoints 
-        updateChart(100);	
-        setInterval(function(){updateChart()}, updateInterval);
+//             chart.render();
+//         }
+//         // generates first set of dataPoints 
+//         updateChart(100);	
+//         setInterval(function(){updateChart()}, updateInterval);
         
-    })()
+//     })()
 
 

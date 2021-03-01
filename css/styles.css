@@ -9,7 +9,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
     font-family: 'Lato';
-
+    box-sizing: border-box;
 }
 .wrapper{
     height: 100vh;
@@ -273,7 +273,7 @@ button{
     padding: 0%;
 }
 
-/* Select Operation Modal */
+/* Select configuration Modal */
 .select-wrapper{
     display: flex;
     flex-direction: column;
@@ -602,26 +602,33 @@ button{
 }
 
 
-/* Operations Page Content */
-.operations-page-content{
-    align-items: center;
+/* Configurations Page Content */
+.configurations-page-content{
     width: 100%;
-    height: 100%;
+    height: 98vh;
+    padding: 0.5rem 0rem;
+    margin: 0rem;
 }
-.operations-page-content h2{
+.configurations-page-content h2{
     font-weight: bold;
+    font-size: 1.5rem;
 }
-#add-new-operation{
-    background-color: #45C86D;
-    padding: 0.25rem 0.5rem;
-}
-#operations-list-div{
-    background-color:rgb(221, 196, 200);
-    margin-top: 1rem;
+
+#configurations-list-div{
+    margin: 0rem;
     align-items: center;
     justify-content: center;
-    padding: 0%;
-    width: 100%;
+    padding: 0rem 1rem;
+    height: 99%;
+}
+#configurations-list{
+    padding-top: 1rem;
+    height: 95%;
+    overflow: auto;
+}
+#create-configuration-div{
+    margin: 0rem;
+    padding: 0rem 1rem;
 }
 
 
@@ -719,9 +726,23 @@ button{
 .trendlines-display-wrapper .trendline-chart {
     width: 100%;
     height: 480px;
+    margin: 2rem 0rem;
   }
-
-
+  /* .canvasjs-chart-credit{
+      display: none !important;
+  }
+  #speed-display-div > div > a{
+      display: none !important;
+  } */
+#speed-display-div > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(4){
+    display: none;
+}
+#temperature-display-div > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
+    display: none;
+}
+#pressure-display-div > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(4){
+    display: none
+}
 
 @media all and (min-width:992px) and (max-width:1199px){
 
@@ -1124,7 +1145,7 @@ button{
     padding: 0%;
 }
 
-/* Select Operation Modal */
+/* Select configuration Modal */
 .select-wrapper{
     display: flex;
     flex-direction: column;
@@ -1475,28 +1496,31 @@ button{
 
 }
 
-/* Operations Page Content */
-.operations-page-content{
-    align-items: center;
+/* configurations Page Content */
+
+.configurations-page-content{
     width: 100%;
-    height: 100%;
+    padding: 0rem 0.5rem;
     margin-top: 4.5rem;
 }
-.operations-page-content h2{
+.configurations-page-content h2{
     font-weight: bold;
     font-size: 1.25rem;
 }
-#add-new-operation{
-    background-color: #45C86D;
-    padding: 0.25rem 0.5rem;
+
+#configurations-list-div{
+    margin: 0rem;
+    padding: 0rem 0.5rem;
+    height: 99%;
 }
-#operations-list-div{
-    background-color:rgb(221, 196, 200);
-    margin-top: 1rem;
-    align-items: center;
-    justify-content: center;
-    padding: 0%;
-    width: 100%;
+#configurations-list{
+    padding-top: 0.5rem;
+    height: 95%;
+    overflow: auto;
+}
+#create-configuration-div{
+    margin: 0rem;
+    padding: 0rem 1rem;
 }
 
 
@@ -1880,7 +1904,7 @@ button{
     padding: 0%;
 }
 
-/* Select Operation Modal */
+/* Select configuration Modal */
 .select-wrapper{
     display: flex;
     flex-direction: column;
@@ -2229,28 +2253,33 @@ button{
 
 }
 
-/* Operations Page Content */
-.operations-page-content{
-    align-items: center;
-    width: 100%;
-    height: 100%;
+/* configurations Page Content */
+.configurations-page-content{
+    height: 90vh;
+    padding: 0rem 0.5rem;
     margin-top: 4.5rem;
 }
-.operations-page-content h2{
+.configurations-page-content h2{
     font-weight: bold;
     font-size: 1.25rem;
 }
-#add-new-operation{
-    background-color: #45C86D;
-    padding: 0.25rem 0.5rem;
-}
-#operations-list-div{
-    background-color:rgb(221, 196, 200);
-    margin-top: 1rem;
-    align-items: center;
-    justify-content: center;
-    padding: 0%;
+
+#configurations-list-div{
+    margin: 0rem;
+    padding: 0rem 0.5rem;
+    height: 45%;
     width: 100%;
+}
+#configurations-list{
+    padding-top: 0.5rem;
+    height: 95%;
+    overflow: auto;
+}
+#create-configuration-div{
+    margin: 0rem;
+    padding: 0rem 1rem;
+    height: 45%;
+    overflow: auto;
 }
 
 
@@ -2610,7 +2639,7 @@ button{
     padding: 0%;
 }
 
-/* Select Operation Modal */
+/* Select configuration Modal */
 .select-wrapper{
     display: flex;
     flex-direction: column;
@@ -2967,28 +2996,33 @@ button{
 
 }
 
-/* Operations Page Content */
-.operations-page-content{
-    align-items: center;
-    width: 100%;
-    height: 100%;
+/* configurations Page Content */
+.configurations-page-content{
+    height: 90vh;
+    padding: 0rem 0.5rem;
     margin-top: 4.5rem;
 }
-.operations-page-content h2{
+.configurations-page-content h2{
     font-weight: bold;
     font-size: 1.25rem;
 }
-#add-new-operation{
-    background-color: #45C86D;
-    padding: 0.25rem 0.5rem;
-}
-#operations-list-div{
-    background-color:rgb(221, 196, 200);
-    margin-top: 1rem;
-    align-items: center;
-    justify-content: center;
-    padding: 0%;
+
+#configurations-list-div{
+    margin: 0rem;
+    padding: 0rem 0.5rem;
+    height: 45%;
     width: 100%;
+}
+#configurations-list{
+    padding-top: 0.5rem;
+    height: 95%;
+    overflow: auto;
+}
+#create-configuration-div{
+    margin: 0rem;
+    padding: 0rem 1rem;
+    height: 45%;
+    overflow: auto;
 }
 
 
@@ -3380,7 +3414,7 @@ button{
         padding: 0%;
     }
     
-    /* Select Operation Modal */
+    /* Select configuration Modal */
     .select-wrapper{
         display: flex;
         flex-direction: column;
@@ -3748,30 +3782,34 @@ button{
     }
     
     
-    /* Operations Page Content */
-    .operations-page-content{
-        align-items: center;
+    /* configurations Page Content */
+    .configurations-page-content{
         width: 100%;
-        height: 100%;
-        margin-top: 0rem;
-        padding-top: 0.5rem;
+        height: 99vh;
+        padding: 0.5rem 0rem;
+        margin: 0rem;
         max-width: 83.33%;
     }
-    .operations-page-content h2{
+    .configurations-page-content h2{
         font-weight: bold;
+        font-size: 1.25rem;
     }
-    #add-new-operation{
-        background-color: #45C86D;
-        padding: 0.25rem 0.5rem;
-    }
-    #operations-list-div{
-        background-color:rgb(221, 196, 200);
-        margin-top: 1rem;
+    
+    #configurations-list-div{
+        margin: 0rem;
         align-items: center;
         justify-content: center;
-        padding: 0%;
-        width: 100%;
-        overflow-y: auto;
+        padding: 0rem 0.5rem;
+        height: 99%;
+    }
+    #configurations-list{
+        padding-top: 0.5rem;
+        height: 95%;
+        overflow: auto;
+    }
+    #create-configuration-div{
+        margin: 0rem;
+        padding: 0rem 1rem;
     }
 
     
@@ -3896,4 +3934,757 @@ button{
     }
     .trendlines-content .trendline-chart{
     }    
+}
+
+@media all and (width:500px) and (height: 400px){
+
+    /* Homepage */
+    .homepage-wrapper{
+        height: 100vh;
+        padding: 0%;
+        margin: 0%;
+        background-color: #000B17;
+    }
+    
+    .menu-div{
+        height: 100%;
+        padding: 0%;
+        margin: 0%;
+        justify-content: center;
+    }
+    .menu-div .homepage-cardgroup{
+        height: 100%;
+        padding: 1rem;
+        width: 95%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    
+    }
+    .menu-div .homepage-cardgroup .card-div{
+        width: 30%;
+        margin: 0rem 0.5rem 0rem 0.5rem;
+        background-color: #fafbfc;
+        border-radius: 10px;
+        padding: 1rem;
+        box-shadow: 0 0 0.7rem rgba(255, 255, 255, 0.8);
+        transition: transform 1s ease-in-out;
+    }
+    
+    .menu-div .homepage-cardgroup .card-div:hover{
+        color: #1f2833;
+        font-weight: bolder;
+        transform: scale(1.1);
+        background-color: #45a29e;
+        background-color: #84c9fb;
+        animation-duration: inherit;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-timing-function: ease-in-out;
+        cursor: pointer;
+    }
+    
+    .homepage-cardgroup a{
+        text-decoration: none;
+        color: black;
+    }
+    .menu-div .homepage-cardgroup .card-div button{
+        width: 100%;
+        background-color: transparent;
+        outline: none;
+    }
+    .homepage-card-icon-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+    }
+    .menu-div .menu-icon{
+        width: 40%;
+        /* margin-top: 0.5rem; */
+    }
+    .menu-div .card-body{
+        display: flex;
+        justify-content: center;
+        padding: 0%;
+    }
+    .menu-div .card-body-caption{
+        font-size: 1.25rem;
+        font-weight: 600;
+        padding-top: 0.5rem;
+    }
+    
+    /* Mobile  Navbar */
+    .mobile-navbar{
+        display: none;
+        background-color: #000B17;
+    }
+    
+    
+    /* Vertical Menu Bar Section */
+    .vertical-menu-bar{
+        background-color: #000B17;
+        padding: 0.5rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        justify-content: space-around;
+        height:auto;
+        width: 16.67%;
+    }
+    .vertical-menu-bar .logo-div{
+        justify-content: center;
+    }
+    .vertical-menu-bar .logo-div img{
+        width: 30%;
+    }
+    .menu-items-div{
+        height: auto;
+        color: #042A2B;
+    }
+    .menu-items-div .list-items-group{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding: 0%;
+    }
+    .menu-items-div li{
+        background-color: #fcfcfc;
+        list-style-type: none;
+        padding: 0.125rem;
+        border-radius: 10px;
+        margin: 0.125rem 0rem;
+    }
+    .menu-items-div li a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: #2b1d04;
+    }
+    .menu-items-div li .menu-icon{
+        /* width: 20%; */
+        font-size: 1rem;
+    }   
+    .menu-items-div li .menu-item{
+        font-size: 1rem;
+    }
+    .vertical-menu-bar .reset-shutdown-div{
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+    }
+    .reset-shutdown-div .reset-shutdown-button{
+        padding: 0.25rem 0.25rem;
+        font-weight: bold;
+        font-size: 0;
+    }
+    .reset-shutdown-button > span:first-child{
+        margin-right: 0.25rem;
+    }
+    
+    /* Main Content Section */
+    .page-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding: 0rem 0.5rem;
+        margin: 0;
+        max-width: 83.33%;
+    }
+    
+    /* Action Bar Section */
+    .action-bar-div{
+        background-color: #000B17;
+        height: 10%;
+        margin: 0rem 0rem 0.25rem 0rem;
+        padding: 0.125rem;
+        justify-content: space-around;
+        border-radius: 10px;
+        font-size: 0.75rem;
+    }
+    .action-bar-div button{
+        outline: none;
+        font-weight: 600;
+        font-size: 0.75rem;
+    }
+
+    .action-bar-div .action-bar-button{
+        border-radius: 10px;
+        padding: 0.125rem 0.5rem;
+        font-size: 0.75rem;
+        color: #fcfcfc;
+    }
+    .action-bar-div .action-bar-icon{
+        margin: 0rem 0.125rem 0rem 0rem;
+        align-self: center;
+        width: 16px;
+    }
+    .action-bar-div .start-button{
+        background-color: #45C86D;
+    }
+    .action-bar-div .stop-button{
+        background-color: #DC3545;
+    }
+    .action-bar-div .internet-button{
+        /* color: black; */
+        background-color: #45C86D;
+    
+    }
+    .action-bar-div .sync-div{
+        background-color: white;
+        padding: 0.25rem 0.25rem;
+        border-radius: 5px;
+        align-items: center;
+    }
+    .action-bar-div .sync-div span:first-child{
+        display: flex;
+        align-items: center;
+    }
+    .action-bar-div .sync-value{
+        font-size: 0.75rem;
+        margin-left: 0.25rem;
+        font-weight: bold;
+    }
+    .action-bar-div .action-bar-alarm-count{
+        background-color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 5px;
+        align-items: center;
+        font-weight: bold;
+    }
+    .action-bar-div .action-bar-alarm-count span:first-child{
+        display: flex;
+        align-items: center;
+    }
+    .action-bar-div .alarm-count{
+        font-size: 0.75rem;
+        margin-left: 0.25rem;
+        padding: 0%;
+    }
+    
+    /* Select configuration Modal */
+    .select-wrapper{
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+        width: 30.5%;
+        border: 1px solid var(--border-primary-color);
+        background-color: #fafbfc;
+        border-radius: 5px;
+        padding: 0.25em 0em;
+        margin-right: 0.5em;
+        align-items: center;
+        position: relative;
+        outline: none;
+        transition: all 0.2s ease-in-out;
+        /* flex-grow: 2; */
+    }
+    .select-wrapper:hover{
+        border: 1px solid var(--border-primary-color);
+        background-color: #f3f4f6;
+    }
+    .select-wrapper .btn-wrapper{
+        align-items: center;
+        padding: 0%;
+        margin: 0%;
+        position: relative;
+        cursor: pointer;
+    }
+    .select-wrapper .btn-wrapper span{
+        border: none;
+        padding: 0em 0.125em;
+        margin: 0em;
+        font-size: 0.875em;
+        font-weight: 500;
+        opacity: 0.75;
+    }
+    .select-wrapper .btn-wrapper .value-span{
+        color: var(--text-color);
+        margin: 0em 0.25em;
+        font-weight: 600;
+        opacity: 1;
+    }
+    .select-wrapper .btn-wrapper i{
+        font-size: 0.875em;
+        padding: 0%;
+        margin: 0em 0.125em;
+    }
+    .select-wrapper .menu .open-dropdown{
+        display: block;
+    }
+    /* .select-wrapper .menu{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        margin: 2.5em 0em 0em 0em;
+        width: 250px;
+        height: auto;
+        max-height: 480px;
+        border-radius: 6px;
+        background-color: white;
+        padding: 0.25em 0em 0.25em 0em;
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+        border: 1px solid #d1d5da;
+        flex-direction: column;
+        z-index: 500;
+        overflow-y: auto;
+    }
+    .select-wrapper .modal-wrapper{
+        width: 100%;
+    } */
+
+    
+.select-wrapper .menu{
+    position: fixed;      
+    margin: 0em;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    z-index: 9999999;
+    padding: 0em 1em;
+    background-color: rgba(27,31,35,0.5);
+}
+.select-wrapper .modal-wrapper{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: white;
+    padding: 0.25em 0em 0.25em 0em;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    border: 1px solid #d1d5da;
+    flex-direction: column;
+    width: 95%;
+    overflow-y: auto;
+    height: 75%;
+}
+
+    .select-wrapper .menu .select-menu-header{
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.25em 1em;
+    }
+    .select-wrapper .menu .select-menu-header .select-menu-title{
+        font-weight: 600;
+        font-size: 0.8em;
+        color: (var(--text-color));
+    }
+    .select-wrapper .menu .select-menu-header .iconify{
+        font-size: 1em;
+        color: var(--text-color-secondary);
+        color: rgb(149, 157, 165);
+    }
+    .select-wrapper .menu .select-menu-header .iconify:hover{
+        cursor: pointer;
+        color: black;
+    }
+    .select-wrapper .menu li{
+        border: none;
+        font-size: 1em;
+        font-weight: 400;
+        outline: none;
+        margin: 0em;
+        padding: 0.25em 1.25em;
+        cursor: pointer;
+        background-color: transparent;
+        color: var(--text-color);
+        border-top: 1px solid var(--border-primary-color);
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    .select-wrapper .menu li:hover{
+        background-color: rgb(246, 248, 250);
+    }
+    .select-wrapper .menu li .iconify{
+        visibility: hidden;
+        font-size: 1.25em;
+        margin: 0em 0.5em 0em 0em;
+    }
+
+    /* Motor Speeds Section */
+    .motor-speeds-div{
+        background-color:  #000B17;
+        height: 45%;
+        margin: 0.25rem 0rem;
+        padding: 0.25rem;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .motor-speeds-div h2{
+        color: #fcfcfc;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+    .motor-speeds-div .card{
+        border-radius: 10px;
+        box-shadow: 0 0 0.25rem rgba(255, 255, 255, 0.8);
+    
+        /* width: 100%; */
+        height: 140px !important;
+    }
+    .motor-speeds-cardgroup .row{
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+    .motor-speeds-cardgroup .row .col{
+        max-width: 19%;
+        padding: 0;
+        
+    }
+
+    .motor-speeds-div .card-footer{
+        padding: 0%;
+    }
+    .motor-speeds-div .card-footer-caption{
+        font-size: 0.75rem;
+        margin: 0;
+        padding: 0.25rem 0.25rem;
+        margin: 0%;
+        font-weight: 600;
+    }
+    .motor-speeds-cardgroup .card-chart{
+        display: flex;
+        justify-content: center;
+        padding: 0%;
+        margin: 0%;
+        height: 75%;
+        border-radius: 10px 10px 0px 0px;
+    }
+    /* Blower Speed Chart */
+    #blowerSpeedChart{
+        width: 100%;
+    }
+    #blowerSpeedChart > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
+        display: none;
+    }
+    #blowerSpeedChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(3) > g{
+        font-size: 0.5rem;
+        font-weight: bold;
+    }
+    #blowerSpeedChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(6){
+        font-weight: bold;
+        font-size: 1.75rem;
+    }
+    
+    /* Feeder Speed Chart */
+    #feederSpeedChart{
+        width: 100%;
+    }
+    #feederSpeedChart > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
+        display: none;
+    }
+    #feederSpeedChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(3) > g{
+        font-size: 0.5rem;
+        font-weight: bold;
+    }
+    #feederSpeedChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(6){
+        font-weight: bold;
+        font-size: 1.75rem;
+    }
+    
+    /* Mixer Speed Chart */
+    #mixerSpeedChart{
+        width: 100%;
+    }
+    #mixerSpeedChart > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
+        display: none;
+    }
+    #mixerSpeedChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(3) > g{
+        font-size: 0.5rem;
+        font-weight: bold;
+    }
+    #mixerSpeedChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(6){
+        font-weight: bold;
+        font-size: 1.75rem;
+    }
+    
+    /* Air Volume Chart */
+    #airVelocityChart{
+        width: 100%;
+    }
+    #airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
+        display: none;
+    }
+    #airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(3) > g{
+        font-size: 0.5rem;
+        font-weight: bold;
+    }
+    #airVelocityChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(6){
+        font-weight: bold;
+        font-size: 1.75rem;
+    }
+    
+    /* Air Pressure Chart */
+    #airPressureChart{
+        width: 100%;
+    }
+    #airPressureChart > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3){
+        display: none;
+    }
+    #airPressureChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(3) > g{
+        font-size: 0.5rem;
+        font-weight: bold;
+    }
+    #airPressureChart > div > svg > g > g:nth-child(2) > g:nth-child(1) > g > g > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > g > g:nth-child(6){
+        font-weight: bold;
+        font-size: 1.75rem;
+    }
+    
+    /* Temperatures and Humidity Section */
+    .temperatures-humidity-div{
+        background-color:  #000B17;
+        height: 45%;
+        margin: 0.25rem 0rem 0rem 0rem;
+        padding: 0rem 0.5rem;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .temperatures-humidity-div h2{
+        color: #fcfcfc;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+    .temperatures-humidity-cardgroup{
+        padding: 0rem;
+    }
+    .temperatures-humidity-cardgroup .row{
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        padding: 0rem 0.125rem;
+    }
+    .temperatures-humidity-cardgroup .row .col{
+        max-width: 18.5%;
+        /* margin: 0rem 0.01rem !important; */
+        padding: 0%;
+        margin: 0%;
+    }
+    .temperatures-humidity-div .card{
+        border-radius: 10px;
+        background-color: #042A2B;
+        background-color: #fcfcfc;
+        box-shadow: 0 0 0.25rem rgba(255, 255, 255, 0.8);
+    
+    }
+    .temperatures-humidity-cardgroup .card-header{
+        background-color: #042A2B;
+        border-radius: 10px 10px 0px 0px;
+    }
+    .temperatures-humidity-cardgroup .card-title{
+        font-weight: bold;
+        color: white;
+        padding: 0.25rem 0rem;
+        margin: 0%;
+        font-size: 0.625rem;
+    }
+    
+    .temperatures-humidity-cardgroup .card-subgroup-heading{
+        color: black;
+        margin: 0%;
+        font-weight: 600;
+        text-align: left;
+        font-size: 0.6rem;
+    }
+    .temperatures-humidity-cardgroup .card-subgroup-value{
+        font-size: 1.125rem;
+        margin: 0%;
+        font-weight: 600;
+        color: black;
+    }
+    .temperatures-humidity-cardgroup .card-icon-div{
+        width: 20%;
+        display: flex;
+        align-self: flex-end;
+        padding: 0.25rem 0rem 0.25rem 0.5rem;
+    }
+    .temperatures-humidity-cardgroup .card-icon-div img{
+        width: 100%;
+        padding: 0%;
+        margin: 0%;
+    }
+    .temperatures-humidity-cardgroup .first-card-param{
+        border: 1px solid black;
+        align-items: center;
+    }
+    .first-card-param .first-card-param-content{
+        text-align: center;
+        width: 80%;
+        background-color: #fcfcfc;
+    }
+    .temperatures-humidity-cardgroup .second-card-param{
+        border: 1px solid black;
+        border-radius: 0px 0px 10px 10px;
+        align-items: center;
+    }
+    .second-card-param .second-card-param-content{
+        text-align: center;
+        width: 80%;
+        background-color: #fcfcfc;
+        border-radius: 0px 0px 10px 0px;
+    
+    }
+    
+    
+    /* configurations Page Content */
+    .configurations-page-content{
+        width: 100%;
+        height: 99vh;
+        padding: 0.5rem 0rem;
+        margin: 0rem;
+        max-width: 83.33%;
+    }
+    .configurations-page-content h2{
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+    
+    #configurations-list-div{
+        margin: 0rem;
+        align-items: center;
+        justify-content: center;
+        padding: 0rem 0.5rem;
+        height: 99%;
+    }
+    #configurations-list{
+        padding-top: 0.5rem;
+        height: 95%;
+        overflow: auto;
+    }
+    #create-configuration-div{
+        margin: 0rem;
+        padding: 0rem 1rem;
+    }
+
+    
+    /* Data Download Section */
+    .data-download-page-content{
+        margin-top: 0%;
+        padding-top: 0.5rem;
+        max-width: 83.33%;
+    }
+    .data-download-page-content h2{
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+    .data-download-page-content .data-query-div{
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .data-download-page-content .date-query-div{
+        align-items: flex-end;
+        font-size: 1rem;
+        padding: 0%;
+        width: fit-content;
+    }
+    .date-query-div .date-div{
+        margin: 0;
+        margin: 0rem 0.5rem 0rem 0rem;
+        width: 37%;
+    }
+    .date-query-div input{
+        font-size: 1rem;
+        padding: 0%;
+    }
+
+    .data-download-page-content .date-picker{
+        border-radius: 5px;
+        padding: 0rem 0.25rem;
+    }
+    .data-download-page-content #getData{
+        background-color: #45C86D;
+        color: #fcfcfc;
+        font-weight: 600;
+        padding: 0.25rem 0.25rem;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        font-size: 0.875rem;
+    }
+    #getData:hover{
+        transform: scale(1.1);
+    }
+    #getData span:first-child{
+        margin-right: 0.25rem;
+    }
+    .download-data-div{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        align-self: flex-end;
+        margin: 0rem !important;
+    }
+    .data-download-page-content #downloadDataButton{
+        background-color: #042A2B;
+        color: #fcfcfc;
+        font-weight: bold;
+        padding: 0.25rem 0.5rem;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        align-items: center;
+        font-size: 0.875rem;
+        margin: 0%;        
+    }
+    #downloadDataButton:hover{
+        background-color: #92c7ff;
+        color: black;
+    }
+    #downloadDataButton span:first-child{
+        margin-right: 0.75rem;
+        display: flex;
+        align-items: center;
+    }
+    .data-download-page-content #displaySearchData{
+        margin-top: 0.75rem;
+        overflow-y: auto;
+    }
+    .data-download-page-content .spinner-div{
+        align-items: center;
+    }
+    .data-download-page-content .spinner-div .spinner-image{
+        width: 40%;
+    }
+    
+    
+    /* Alarms Page */
+    .alarms-page-content{
+        margin-top: 0;
+        padding-top: 0.5rem;
+        max-width: 83.33%;
+    }
+    .alarms-page-content h2{
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+    .alarms-page-content #alarms-display-div{
+        margin-top: 1rem;
+        overflow-y: auto;
+    }
+
+    /* Trendlines Page */
+    .trendlines-content{
+        margin-top: 0rem;
+        padding-top: 0.5rem;
+        max-width: 83.33%;
+    }
+    .trendlines-content h2{
+        font-size: 1.25rem;
+    }
+    .trendlines-content .trendlines-display-wrapper{
+        margin-top: 1rem;
+    }
+    .trendlines-content .trendline-chart{
+    }    
+}
+
+#speed-display-div > div > svg > g > g:nth-child(2) > g:nth-child(2) > g > g:nth-child(3) > g:nth-child(2) > g:nth-child(1) > path{
+    display: none
 }
