@@ -66,14 +66,30 @@
         <section class="trendlines-content col-12 col-lg-10 col-md-12">
             <h2 class="text-center">Trendlines</h2>
 
-            <div id="trendlines-display-div">
+            <div class="trendlines-display-wrapper flex-col">
+             
+              <div id="speed-display-div" class="trendline-chart">
+              </div>
+
+              <div id="temperature-display-div" class="trendline-chart">
+              </div>
+
+              <div id="pressure-display-div" class="trendline-chart">
+              </div>
+
             </div>
+            
            
         </section>
 
     </div>
 
     <script src="js/jquery.3.2.1.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/animated.js"></script>   
+    <script src="js/canvasjs.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/trendlines.js"></script>
 </body>
 </html>
