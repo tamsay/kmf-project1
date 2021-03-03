@@ -4,6 +4,10 @@ let stopBtn = document.querySelector('#stop')
 let connectInternetBtn = document.querySelector('#connectToInternet')
 let shutdownBtn = document.querySelector('#shutdown-button')
 
+let configurationValue = document.querySelector('#configurationTypeValue');
+let configSelectorLabel = document.querySelector('#config-selector-label');
+let configSelectorDiv = document.querySelector('#configurationType')
+
 let populateConfigurationList =(list)=>{
 
     list.map(element=>{
@@ -72,22 +76,22 @@ let displayDropdowns =(element)=>{
         }
 }
 
-let displayOperationTypes=(()=>{
-    let operationType = document.querySelector('.operationType');
-    let operationValue = document.querySelector('.operationType .value-span')
-    let operationTypes = operationType.querySelectorAll('.menu li')
+let displayconfigurationTypes=(()=>{
+    let configurationType = document.querySelector('.configurationType');
+    let operationValue = document.querySelector('.configurationType .value-span')
+    let configurationTypes = configurationType.querySelectorAll('.menu li')
 
         
-        operationType.addEventListener('click', ()=>{
+        configurationType.addEventListener('click', ()=>{
             if(checkOpenDropdown()){
                 closeOpenDropdown()
             }
             else{
-                displayDropdowns(operationType)
+                displayDropdowns(configurationType)
             }
         })
 
-        getSelectChoice(operationTypes, operationValue);
+        getSelectChoice(configurationTypes, operationValue);
 })()
 
 let closeOnOutsideClick=(()=>{
@@ -128,13 +132,58 @@ let closeOpenDropdown=()=>{
 
 let startOperation =(()=>{
     startBtn.addEventListener('click', ()=>{
-        alert('Operation Started, thanks')
+
+        if(configurationValue.textContent === 'Select Config'){
+            alert('Kindly make a valid selection')
+        }
+
+        else{
+            setTimeout(() => {
+                // MAKE API CALL TO GET CONFIG SERVED
+              let value = 'Current Operation'
+              if(value){
+                  configSelectorLabel.innerText = 'Running Config:'
+                  configurationValue.innerText = value;
+                  startBtn.classList.add('disabled');
+                  configSelectorDiv.classList.add('disabled');
+
+                //   startBtn.classList.add('disabled');
+                //   configSelectorDiv.classList.add('disabled');
+                  
+                  alert('Operation Started, thanks')
+              }
+          }, 3000);
+        
+        }
+       
     })
 })()
 
 let stopOperation =(()=>{
     stopBtn.addEventListener('click', ()=>{
-        alert('Operation Stopped, thanks')
+
+        if(startBtn.classList.contains('disabled')){
+            setTimeout(() => {
+                // make api call to get status from the server
+                let value = 'true'
+    
+                if(value){
+    
+                    configSelectorLabel.innerText = 'Select Config:';
+                    configurationValue.innerText = 'Select Config';
+                    startBtn.classList.remove('disabled');
+                    configSelectorDiv.classList.remove('disabled');
+                    alert('Operation Stopped, thanks');
+    
+                }
+            }, 1000);
+        }
+
+       else{
+           alert('No operation running')
+       }
+
+
     })
 })()
 

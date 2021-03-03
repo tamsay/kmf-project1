@@ -52,21 +52,21 @@ tooltip: {
     {
       title: {
         formatter: function (val) {
-          return val + " (mins)"
+          return val + " (rpm)"
         }
       }
     },
     {
       title: {
         formatter: function (val) {
-          return val + " per session"
+          return val + " (rpm)"
         }
       }
     },
     {
       title: {
         formatter: function (val) {
-          return val;
+          return val + " (rpm)"
         }
       }
     }
