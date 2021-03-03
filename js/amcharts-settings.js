@@ -54,7 +54,7 @@ var range1 = axis2.axisRanges.create();
 range1.value = parseInt(`${(maxValue/2)}`);
 range1.endValue = parseInt(`${maxValue}`);
 range1.axisFill.fillOpacity = 1;
-range1.axisFill.fill = colorSet.getIndex(2);
+range1.axisFill.fill = colorSet.getIndex(8);
 
 /**
  * Label
@@ -104,10 +104,10 @@ setInterval(function() {
     }, 500, am4core.ease.cubicOut).start();
   }
 
-  else  if(chartType === 'mixerSpeed'){
+  else  if(chartType === 'extractorSpeed'){
     var animation = new am4core.Animation(hand, {
       property: "value",
-      to: getChartValues().mixerSpeed
+      to: getChartValues().extractorSpeed
     }, 500, am4core.ease.cubicOut).start();
   }
 
@@ -135,14 +135,14 @@ let getChartValues =()=>{
 
     let blowerSpeed = Math.round(Math.random() * 3000);
     let feederSpeed = Math.round(Math.random() * 3000);
-    let mixerSpeed = Math.round(Math.random() * 3000);
+    let extractorSpeed = Math.round(Math.random() * 3000);
     let airVelocity = Math.round(Math.random() * 1000);
     let airPressure = Math.round(Math.random() * 7);
 
     let chartValues = {
       blowerSpeed: blowerSpeed,
       feederSpeed: feederSpeed,
-      mixerSpeed: mixerSpeed,
+      extractorSpeed: extractorSpeed,
       airVelocity: airVelocity,
       airPressure: airPressure,
     }
@@ -163,10 +163,10 @@ let getChartValues =()=>{
         createChart(feederSpeedId, maxSpeed, 'feederSpeed');
       })()
 
-      let mixerSpeedChart =(()=>{
-        let mixerSpeedId = document.querySelector('#mixerSpeedChart').id
+      let extractorSpeedChart =(()=>{
+        let extractorSpeedId = document.querySelector('#extractorSpeedChart').id
         let maxSpeed = 3000;
-        createChart(mixerSpeedId, maxSpeed, 'mixerSpeed');
+        createChart(extractorSpeedId, maxSpeed, 'extractorSpeed');
       })()  
 
       let airVelocityChart =(()=>{
